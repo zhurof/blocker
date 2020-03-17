@@ -1,0 +1,279 @@
+﻿$red: #db3333
+$yellow: #ffd756
+=placeholder($color)
+	&::-webkit-input-placeholder 
+		color: $color
+	&::-moz-placeholder 
+		color: $color
+	&:-ms-input-placeholder
+		color: $color
+		
+=pos
+	display: block
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	
+=obj
+	object-fit: cover
+	object-position: center
+
+=unlist
+	list-style: none
+	margin: 0
+	padding: 0
+
+html
+	box-sizing: border-box
+
+*,:before,:after
+	box-sizing: inherit
+	flex: 0 1 auto
+
+body
+	margin: 0
+	padding: 70px 0 0
+	display: flex
+	flex-direction: column
+	min-height: 100vh
+	background-color: #eaeaea
+	font-family: Roboto, sans-serif
+	font-size: 18px
+	line-height: 26/18*1
+	font-weight: 300
+	color: #1a1a1a
+
+header,footer
+	flex: 0 0 auto
+
+main
+	flex-grow: 1
+
+img,
+iframe,
+video
+	max-width: 100%
+
+a img
+	border: none
+	
+a
+	color: inherit
+
+p
+	margin: 0 0 26/18*1em
+	&:last-child
+		margin: 0
+
+*:focus
+	outline: none
+
+*:invalid
+	box-shadow: none
+
+/*элементы форм*/
+input,textarea,button,select
+	font: inherit
+	color: inherit	
+	
+textarea
+	resize: none
+	overflow: auto
+	
+//select
+	appearance: none
+	padding: 10.5px 40px 10.5px 20px
+	background: url(../img/icons/angle.svg) no-repeat right 19px center/11px auto
+	&::-ms-expand
+		display: none
+		
+//[type=search]
+	&::-webkit-search-decoration,
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button,
+	&::-webkit-search-results-decoration
+		display: none
+		
+//[type=number]
+	-moz-appearance: textfield
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button
+		appearance: none
+		margin: 0
+		
+/*кнопки*/
+button,
+[type=submit],
+[type=reset],
+[type=image]
+	cursor: pointer
+.btn
+	display: inline-block
+	vertical-align: top
+	appearance: none
+	font: normal 500 18px/66px Roboto,sans-serif
+	color: #be0000
+	white-space: nowrap
+	overflow: hidden
+	text-overflow: ellipsis
+	text-align: center
+	border: none
+	border-radius: 33px
+	padding: 0 30px
+	background: linear-gradient(to bottom,#fff,#b8b8b8)
+	text-decoration: none
+	box-shadow: 0 5px 0 0 #636363, 0 10px 10px rgba(0,0,0,.2)
+	margin-bottom: 5px
+	user-select: none
+	&--red
+		background: linear-gradient(to bottom,#ff6060,#db3333)
+		color: #fff
+		box-shadow: 0 5px 0 0 #b81e1e, 0 10px 10px rgba(0,0,0,.2)
+	&--simple-gray
+		background: #eaeaea
+		box-shadow: none
+		font-size: 15px
+		line-height: 36px
+		margin-bottom: 0
+		padding: 0 40px
+		font-weight: bold
+	&--simple-red
+		background: $red
+		color: #fff
+		font-size: 24px
+		font-weight: bold
+		line-height: 47px
+		box-shadow: none
+	&--block
+		display: block
+		width: 100%
+		padding: 0 10px
+		
+
+/*заголовки*/
+h1,h2,h3,h4,h5,h6
+	margin: 0 0 1em
+h3
+	font-size: 24px
+	font-weight: 400
+	line-height: normal
+	margin: 0 0 .3em
+h4
+	font-size: inherit
+	line-height: inherit
+	margin: 0
+	
+/*списки*/
+ul,ol
+	margin: 0 0 1em
+		
+/*таблицы*/
+/*контейнеры*/
+.wrapper
+	max-width: 1030px
+	margin: 0 auto
+	padding: 0 15px
+
+/*ШАПКА*/
+.logo
+	display: inline-flex
+	align-items: center
+	font-size: 12px
+	text-transform: uppercase
+	line-height: normal
+	text-decoration: none
+	user-select: none
+	&__img
+		width: 40px
+		flex: 0 0 auto
+		margin: 0 8px 0 0
+	&__text
+		flex: 1 1 auto
+		letter-spacing: .28em
+		strong
+			display: block
+			font-weight: bold
+			font-size: 20/12*1em
+			border-bottom: 1px solid rgba(255,255,255,.5)
+			margin: 0 0 .2em
+			letter-spacing: 0
+.header
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	background-color: $red
+	color: #fff
+	padding: 10px 0
+	z-index: 2
+	&__wrapper
+		display: flex
+		align-items: center
+	&__logo
+		margin: 0 15px 0 0
+	&__menu
+		+unlist
+		display: flex
+		align-items: center
+		font-size: 13px
+		text-transform: uppercase
+		margin-left: auto
+		>li
+			padding: 0 9px
+			>a
+				display: block
+				text-decoration: none
+				padding: 2px 0
+				border-bottom: 1px solid transparent
+			&.active>a
+				color: $yellow
+				font-weight: bold
+				border-color: $yellow
+	&__btn
+		margin-left: 10px
+.section-footer
+	width: max-content
+	max-width: 100%
+	padding: 15px 90px
+	position: relative
+	margin: 15px auto 0
+	&:before,
+	&:after
+		content: ''
+		display: inline-block
+		position: absolute
+		top: 0
+		width: 71px
+		height: 56px
+		background: url(../img/arrow--white.svg) no-repeat center/contain
+		pointer-events: none
+	&:before
+		left: 0
+	&:after
+		right: 0
+		transform: scaleX(-1)
+	&--dark
+		&:before,
+		&:after
+			background-image: url(../img/arrow.svg)
+	&__btn
+		width: 380px
+.comparsion
+	padding: 10% 0
+	background: url(../img/honeycombs.png) no-repeat center/100% auto
+	-webkit-mask: url(../img/mask.svg) no-repeat center bottom/100% auto
+	&__title
+		font-size: 40px
+		line-height: 1
+		color: $red
+		border-left: 2px solid
+		padding-left: 5px
+				
+		
+/*ОСНОВНОЕ СОДЕРЖИМОЕ*/
+/*ПОДВАЛ*/
+
+/*АДАПТИВ*/
+@import "adaptive"
