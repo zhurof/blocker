@@ -34,16 +34,16 @@ html
 
 body
 	margin: 0
-	padding: 70px 0 0
+	padding: 69px 0 0
 	display: flex
 	flex-direction: column
 	min-height: 100vh
-	background-color: #eaeaea
+	background: url(../img/bandits.png) no-repeat left calc(50% + 480px) top 150px, url(../img/noise--dark.jpg)
 	font-family: Roboto, sans-serif
 	font-size: 18px
 	line-height: 26/18*1
 	font-weight: 300
-	color: #1a1a1a
+	color: #fff
 
 header,footer
 	flex: 0 0 auto
@@ -55,6 +55,7 @@ img,
 iframe,
 video
 	max-width: 100%
+	user-select: none
 
 a img
 	border: none
@@ -77,31 +78,31 @@ p
 input,textarea,button,select
 	font: inherit
 	color: inherit	
-	
 textarea
 	resize: none
 	overflow: auto
 	
-//select
-	appearance: none
-	padding: 10.5px 40px 10.5px 20px
-	background: url(../img/icons/angle.svg) no-repeat right 19px center/11px auto
-	&::-ms-expand
-		display: none
-		
-//[type=search]
-	&::-webkit-search-decoration,
-	&::-webkit-search-cancel-button,
-	&::-webkit-search-results-button,
-	&::-webkit-search-results-decoration
-		display: none
-		
-//[type=number]
-	-moz-appearance: textfield
-	&::-webkit-outer-spin-button,
-	&::-webkit-inner-spin-button
-		appearance: none
-		margin: 0
+input,textarea
+	+placeholder(inherit)
+
+[type=text],
+[type=email],
+[type=tel],
+[type=url],
+[type=password],
+textarea
+	display: block
+	width: 100%
+	margin: 0 0 10px
+	min-width: 0
+	font-size: 14px
+	line-height: normal
+	color: #1a1a1a
+	border: 1px solid #fff
+	border-radius: 19px
+	background-color: #bbbbbb
+	padding: 9.5px 13px
+	
 		
 /*кнопки*/
 button,
@@ -155,6 +156,9 @@ button,
 /*заголовки*/
 h1,h2,h3,h4,h5,h6
 	margin: 0 0 1em
+h2
+	font-size: 40px
+	line-height: 1
 h3
 	font-size: 24px
 	font-weight: 400
@@ -172,7 +176,7 @@ ul,ol
 /*таблицы*/
 /*контейнеры*/
 .wrapper
-	max-width: 1030px
+	max-width: 990px
 	margin: 0 auto
 	padding: 0 15px
 
@@ -185,13 +189,14 @@ ul,ol
 	line-height: normal
 	text-decoration: none
 	user-select: none
+	text-align: left
+	letter-spacing: .28em
 	&__img
 		width: 40px
 		flex: 0 0 auto
 		margin: 0 8px 0 0
 	&__text
-		flex: 1 1 auto
-		letter-spacing: .28em
+		flex: 1 1 auto		
 		strong
 			display: block
 			font-weight: bold
@@ -199,6 +204,17 @@ ul,ol
 			border-bottom: 1px solid rgba(255,255,255,.5)
 			margin: 0 0 .2em
 			letter-spacing: 0
+	&--big
+		font-size: 28px
+		letter-spacing: .147em
+		text-transform: none
+	&--big &__img
+		width: 50px
+		margin-right: 25px
+	&--big &__text strong
+		font-size: 36/28*1em
+		border: none
+		margin: 0
 .header
 	position: fixed
 	top: 0
@@ -207,7 +223,7 @@ ul,ol
 	background-color: $red
 	color: #fff
 	padding: 10px 0
-	z-index: 2
+	z-index: 5
 	&__wrapper
 		display: flex
 		align-items: center
@@ -226,54 +242,321 @@ ul,ol
 				display: block
 				text-decoration: none
 				padding: 2px 0
-				border-bottom: 1px solid transparent
-			&.active>a
-				color: $yellow
-				font-weight: bold
-				border-color: $yellow
+				border-bottom: 1px solid transparent			
 	&__btn
 		margin-left: 10px
+/*ОСНОВНОЕ СОДЕРЖИМОЕ*/
 .section-footer
-	width: max-content
-	max-width: 100%
-	padding: 15px 90px
 	position: relative
-	margin: 15px auto 0
+	width: 100%
+	text-align: center
+	margin: 15px 0 0
 	&:before,
 	&:after
 		content: ''
 		display: inline-block
-		position: absolute
-		top: 0
 		width: 71px
 		height: 56px
 		background: url(../img/arrow--white.svg) no-repeat center/contain
 		pointer-events: none
-	&:before
-		left: 0
+		vertical-align: top
 	&:after
-		right: 0
 		transform: scaleX(-1)
 	&--dark
 		&:before,
 		&:after
 			background-image: url(../img/arrow.svg)
 	&__btn
-		width: 380px
-.comparsion
-	padding: 10% 0
-	background: url(../img/honeycombs.png) no-repeat center/100% auto
-	-webkit-mask: url(../img/mask.svg) no-repeat center bottom/100% auto
+		min-width: 380px
+		margin-top: 15px
+		margin-left: 10px
+		margin-right: 10px
+.timer
+	font-size: 14px
+	line-height: normal
+	max-width: 290px
+	margin: 0 auto 15px
+	user-select: none
+	&:last-child
+		margin-bottom: 0
 	&__title
+		margin: 0 0 1em
+	&__body
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+	&__item
+		padding: 0 10px
+	&__value
+		font-size: 48px
+		font-weight: 500
+		color: $red
+.promo
+	padding: 20px 0 70px
+	background: url(../img/cards.png) no-repeat left calc(50% - 260px) top -125px
+	&:last-child
+		padding-top: 290px
+		background-position-y: 145px
+	&__wrapper
+		position: relative
+	&__text
+		position: absolute
+		z-index: 1
+		top: 0
+		border-left: 3px solid
+		padding-left: 10px
+		font-size: 26px
+		letter-spacing: .085em
+	&__title
+		letter-spacing: 0
+		font-size: 48px
+		line-height: 1
+		margin: 0
+	&__form
+		background-color: #1a1a1a
+		border-radius: 15px
+		max-width: 345px
+		margin: 0 20px 16px auto
+		position: relative
+		padding: 110px 20px 10px
+		text-align: center
+		&:last-child
+			margin-bottom: 0
+	&__discount
+		position: absolute
+		top: 15px
+		right: -20px
+		font-size: 30px
+		line-height: normal
+		font-weight: bold
+		color: #414141
+		background-color: $yellow
+		padding: 3px 10px
+		user-select: none
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 100%
+			right: 0
+			border-left: 20px solid #a18222
+			border-bottom: 20px solid transparent
+		strong
+			font-size: 72/30*1em
+			line-height: 1
+	&__price
+		display: inline-block
+		color: $yellow
 		font-size: 40px
 		line-height: 1
+		font-weight: bold
+		margin: 0 0 14px
+		&--old
+			font-size: 22px
+			color: rgba(255,255,255,.7)
+			text-decoration: line-through
+			margin-right: .3em
+	&__note
+		font-size: 12px
+		margin: 1em 0 0
+		color: rgba(255,255,255,.5)
+		padding: 0 20px
+	&__list
+		+unlist
+		display: flex
+		align-items: flex-start
+		>li
+			display: inline-block
+			flex: 0 1 50%
+			padding: 5px 28px 0 40px
+			margin: 0 0 1em
+			position: relative
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+				width: 32px
+				height: 32px
+				background: url(../img/marker.svg) no-repeat center/contain
+.pic-block
+	background: url(../img/red-circle.svg) no-repeat left calc(50% + 420px) top 100% #eaeaea
+	position: relative
+	padding: 0 0 108px
+	color: #1a1a1a
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: -259px
+		width: 100%
+		height: 260px
+		background: url(../img/gray-arc.svg) no-repeat center top/100% 100%
+		pointer-events: none
+		z-index: 1
+	&__wrapper
+		display: flex
+		align-items: flex-start
+		position: relative
+		z-index: 2
+	&__text
+		width: 50%
+	&__title
 		color: $red
 		border-left: 2px solid
-		padding-left: 5px
-				
+		padding-left: 10px
+		margin: 0 0 .5em
+	&__pic
+		width: calc(50% - 24px)
+		margin: 50px 0 0 auto
+		position: relative
+		&:before
+			content: ''
+			background: url(../img/marker--stroke.svg) no-repeat center/contain
+			display: block
+			height: 100%
+			width: 300/456*100%
+			position: absolute
+			pointer-events: none
+			top: 15px
+			left: -15px
+		img
+			display: block
+			width: 100%
+	
+.places
+	padding: 0 0 60px
+	background: url(../img/noise.jpg)
+	color: #fff
+	position: relative	
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: -259px
+		width: 100%
+		height: 260px
+		background: url(../img/noise-arc.svg) no-repeat center top/100% 100%
+		pointer-events: none
+		z-index: 2
+	&__title
+		border-left: 2px solid $red
+		padding-left: 10px
+	&__body
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -44px
+	&__item
+		width: 216px
+		margin: 0 23px 30px
+		text-align: center
+	&__pic
+		position: relative
+		width: 216px
+		height: 216px
+		border: 3px solid $red
+		border-radius: 50%
+		padding: 6px
+		position: relative
+		margin: 0 auto 20px
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			pointer-events: none
+			width: calc(100% + 24px)
+			height: calc(100% + 24px)
+			top: -12px
+			left: -12px
+			border-radius: inherit
+			border: inherit
+			border-width: 2px
+		img
+			display: block
+			width: 100%
+			height: 100%
+			+obj
+			border-radius: inherit
+			border: 4px solid #fff
+			box-shadow: 0 0 40px 5px $red
 		
-/*ОСНОВНОЕ СОДЕРЖИМОЕ*/
+.comparsion
+	padding: 0 0 50px 
+	position: relative
+	z-index: 1
+	margin-bottom: -280px
+	&:last-child
+		margin-bottom: 0
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: -300px
+		left: 0
+		width: 100%
+		height: calc(100% + 300px)
+		background: url(../img/honeycombs-arc.png) no-repeat center bottom/100% 100%
+		pointer-events: none
+	&__wrapper
+		position: relative
+		z-index: 1
+	&__title
+		color: $red
+		border-left: 2px solid
+		padding-left: 10px
+	&__body
+		display: flex
+		margin: 0 -14px
+		flex-wrap: wrap
+	&__item
+		background-color: #fff
+		border-radius: 15px
+		padding: 20px
+		font-size: 16px
+		line-height: 22/16*1
+		color: #484848
+		margin: 0 14px 30px
+		width: calc(50% - 28px)
+		&-head
+			text-align: center
+			margin: 0 0 10px
+	&__pic
+		position: relative
+		height: 390px
+		background: url(../img/big-marker.svg) no-repeat center/contain
+		margin: 0 0 22px
+		&--negative
+			background-image: url(../img/big-marker-red.svg)
+	&__img
+		display: block
+		max-height: 100%
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+	&__status
+		position: absolute
+		top: 55px
+		right: -36px
+		filter: drop-shadow(0 0 5px rgba(0,0,0,.5))
+	&__text
+		h4
+			color: #45a640
+		&--negative h4
+			color: $red
 /*ПОДВАЛ*/
-
+.footer
+	text-align: center
+	&__topline
+		padding: 18px 0
+		background-color: #1a1a1a
+		color: $yellow
+	&__bottomline
+		color: #484848
+		font-size: 16px
+		line-height: 22/16*1
+		padding: 1em 0
+		background-color: #eaeaea
 /*АДАПТИВ*/
 @import "adaptive"

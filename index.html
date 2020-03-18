@@ -5,45 +5,131 @@
 	<title>Верстка</title>
 	<meta name="viewport" content="width=device-width, shrink-to-fit=no" />	
 	<link rel="stylesheet" href="css/fonts.css" />	
-	<link rel="stylesheet" href="css/font-awesome.css" />
-	<link rel="stylesheet" href="libs/slick/slick.css" />
 	<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 	<header class="header">
 		<div class="wrapper header__wrapper">
-			<a href="#" class="logo header__logo">
+			<div  class="logo header__logo">
 				<img src="img/logo.svg" alt="" class="logo__img">
 				<span class="logo__text">
 					<strong>Карта - блокировщик</strong>
 					<span>защита банковских карт</span>
 				</span>
-			</a>
+			</div>
 			<ul class="header__menu">
-				<li class="active"><a href="#">Карта-блокиратор</a></li>
-				<li><a href="#">как работают мошенники</a></li>
-				<li><a href="#">как защититься</a></li>
+				<li class="active"><a href="#top">Карта-блокиратор</a></li>
+				<li><a href="#how-it-works">как работают мошенники</a></li>
+				<li><a href="#what-to-do">как защититься</a></li>
 			</ul>
-			<a href="#" class="btn btn--simple-gray header__btn">КУПИТЬ</a>
+			<a href="#top" class="btn btn--simple-gray header__btn">КУПИТЬ</a>
 		</div>
 	</header>
 	<!-- Переход на страницу со ссылками на современные браузеры для ie9 и ниже -->
 	<!--[if lt IE 10]><script>location.href='/old-ie.html';</script><![endif]-->
 	<main>
-		<div class="comparsion">
+		<div class="promo" id="top">
+			<div class="wrapper promo__wrapper">
+				<div class="promo__text">
+					<h1 class="promo__title">Карта - блокиратор сигнала</h1>
+					<p>Для защиты бесконтактных банковских карт</p>
+				</div>
+				<form action="" class="promo__form">
+					<div class="promo__discount">Скидка <strong>-30%</strong></div>
+					<div class="timer" data-end="2020-03-20T14:30:24">
+						<div class="timer__title">до конца акции осталось</div>
+						<div class="timer__body">
+							<div class="timet__item">
+								<div class="timer__value timer__value--hours">00</div>
+								<div class="timer__unit">часов</div>
+							</div>
+							<div class="timet__item">
+								<div class="timer__value">:</div>
+							</div>
+							<div class="timet__item">
+								<div class="timer__value timer__value--minutes">00</div>
+								<div class="timer__unit">минут</div>
+							</div>
+							<div class="timet__item">
+								<div class="timer__value">:</div>
+								<div class="timer__unit"></div>
+							</div>
+							<div class="timet__item">
+								<div class="timer__value timer__value--seconds">00</div>
+								<div class="timer__unit">секунд</div>
+							</div>
+						</div>
+					</div>
+					<input type="text" placeholder="Введите Ваше Имя" required />
+					<input type="tel" placeholder="Введите Ваш Телефон" required />
+					<div class="promo__price-block">
+						<span class="promo__price promo__price--old">4550 руб.</span>
+						<span class="promo__price">3550 руб.<sup>*</sup></span>
+					</div>
+					<button class="btn btn--simple-red btn--block promo__btn">Заказать</button>
+					<div class="promo__note">*Цена акционная, детали акции озвучит менеджер нашего магазина</div>
+				</form>
+				<ul class="promo__list">
+					<li>Защитная карта блокирует доступ для всех устройств, пытающихся считать данные с Ваших банковских карт.</li>
+					<li>Создает электронное поле, радиусом несколько сантиметров, делающее Ваши пластиковые карты невидимыми для устройств-сканеров.</li>
+				</ul>
+				<div class="section-footer promo__footer">
+					<a href="#how-it-works" class="btn section-footer__btn">Как мошенники воруют Ваши деньги</a>
+				</div>
+			</div>
+		</div>
+		<div class="pic-block" id="how-it-works">
+			<div class="wrapper pic-block__wrapper">
+				<div class="pic-block__text">
+					<h2 class="pic-block__title">Как мошенники <br>воруют Ваши деньги</h2>
+					<p>На расстоянии около полуметра от Вас, злоумышленник использует специальное устройство-считыватель карт и просто забирает Ваши деньги!</p>
+					<p>Для того, чтобы снять деньги с Ваших банковских карт, мошеннику достаточно просто находиться недалеко от Вас с включенным устройством-сканером.</p>
+				</div>
+				<div class="pic-block__pic">
+					<img src="img/ass.jpg" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="places">
 			<div class="wrapper">
+				<h2 class="places__title">Места где это <br>может произойти</h2>
+				<div class="places__body">
+					<div class="places__item">
+						<div class="places__pic"><img src="img/places/0.jpg" alt=""></div>
+						<div class="places__caption">Общественный транспорт</div>
+					</div>
+					<div class="places__item">
+						<div class="places__pic"><img src="img/places/1.jpg" alt=""></div>
+						<div class="places__caption">Магазины <br>и торговые павильоны</div>
+					</div>
+					<div class="places__item">
+						<div class="places__pic"><img src="img/places/2.jpg" alt=""></div>
+						<div class="places__caption">Массовые <br>мероприятия</div>
+					</div>
+					<div class="places__item">
+						<div class="places__pic"><img src="img/places/3.jpg" alt=""></div>
+						<div class="places__caption">На улице, <br>в людных местах</div>
+					</div>
+				</div>
+				<div class="section-footer places__footer">
+					<a href="#what-to-do" class="btn section-footer__btn">Как обезопасить банковские карты</a>
+				</div>
+			</div>
+		</div>
+		<div class="comparsion" id="what-to-do">
+			<div class="wrapper comparsion__wrapper">
 				<h2 class="comparsion__title">Как обезопасить свои деньги <br>от мошенников</h2>
 				<div class="comparsion__body">
 					<div class="comparsion__item">
-						<div class="comparsion__head">
+						<div class="comparsion__item-head">
 							<h3 class="comparsion__item-title">Дорогой вариант</h3>
 							<p>Портмоне со специальной защитой <br>пластиковых карт</p>
 						</div>
-						<div class="comparsion__pic">
+						<div class="comparsion__pic comparsion__pic--negative">
 							<img src="img/purse.png" alt="" class="comparsion__img">
 							<img src="img/cross.svg" alt="" class="comparsion__status">
 						</div>
-						<div class="comparsion__text">
+						<div class="comparsion__text comparsion__text--negative">
 							<h4>Высокая стоимость</h4>
 							<p>Надежные варианты, которые действительно помогают, стоят от 7500 рублей и выше.</p>
 							<h4>Занимает много места</h4>
@@ -51,9 +137,9 @@
 						</div>
 					</div>
 					<div class="comparsion__item">
-						<div class="comparsion__head">
+						<div class="comparsion__item-head">
 							<h3 class="comparsion__item-title">Бюджетный вариант</h3>
-							<p>Защитная карта, блокирующая доступ к Вашим банковским картам для злоумышленников</p>
+							<p>Защитная карта, блокирующая доступ к Вашим <br>банковским картам для злоумышленников</p>
 						</div>
 						<div class="comparsion__pic">
 							<img src="img/card.png" alt="" class="comparsion__img">
@@ -68,16 +154,75 @@
 					</div>
 				</div>
 				<div class="section-footer section-footer--dark comparsion__footer">
-					<a href="#" class="btn btn--red section-footer__btn">Заказать защитную карту</a>
+					<a href="#order" class="btn btn--red section-footer__btn">Заказать защитную карту</a>
 				</div>
+			</div>
+		</div>
+		<div class="promo" id="order">
+			<div class="wrapper promo__wrapper">
+				<div class="promo__text">
+					<h1 class="promo__title">Карта - блокиратор сигнала</h1>
+					<p>Для защиты бесконтактных банковских карт</p>
+				</div>
+				<form action="" class="promo__form">
+					<div class="promo__discount">Скидка <strong>-30%</strong></div>
+					<div class="timer" data-end="2020-03-20T14:30:24">
+						<div class="timer__title">до конца акции осталось</div>
+						<div class="timer__body">
+							<div class="timet__item">
+								<div class="timer__value timer__value--hours">00</div>
+								<div class="timer__unit">часов</div>
+							</div>
+							<div class="timet__item">
+								<div class="timer__value">:</div>
+							</div>
+							<div class="timet__item">
+								<div class="timer__value timer__value--minutes">00</div>
+								<div class="timer__unit">минут</div>
+							</div>
+							<div class="timet__item">
+								<div class="timer__value">:</div>
+								<div class="timer__unit"></div>
+							</div>
+							<div class="timet__item">
+								<div class="timer__value timer__value--seconds">00</div>
+								<div class="timer__unit">секунд</div>
+							</div>
+						</div>
+					</div>
+					<input type="text" placeholder="Введите Ваше Имя" required />
+					<input type="tel" placeholder="Введите Ваш Телефон" required />
+					<div class="promo__price-block">
+						<span class="promo__price promo__price--old">4550 руб.</span>
+						<span class="promo__price">3550 руб.<sup>*</sup></span>
+					</div>
+					<button class="btn btn--simple-red btn--block promo__btn">Заказать</button>
+					<div class="promo__note">*Цена акционная, детали акции озвучит менеджер нашего магазина</div>
+				</form>
+				<ul class="promo__list">
+					<li>Защитная карта блокирует доступ для всех устройств, пытающихся считать данные с Ваших банковских карт.</li>
+					<li>Создает электронное поле, радиусом несколько сантиметров, делающее Ваши пластиковые карты невидимыми для устройств-сканеров.</li>
+				</ul>
 			</div>
 		</div>
 	</main>
 	<footer class="footer">
-		
+		<div class="footer__topline">
+			<div class="wrapper">
+				<div  class="logo logo--big footer__logo">
+					<img src="img/logo--yellow.svg" alt="" class="logo__img">
+					<span class="logo__text">
+						<strong>Сохраните Ваши деньги в безопасности</strong>
+						<span>Закажите защитную карту прямо сейчас!</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="footer__bottomline">
+			<div class="wrapper">ООО «ДОСТАВКА 24», ИНН 7724914668 / ОГРН 1147746315298, г. Москва, ул. Б. Семеновская, д. 27</div>
+		</div>
 	</footer>
 	<script src="libs/jquery/jquery-3.4.1.min.js"></script>
-	<script src="libs/slick/slick.min.js"></script>
 	<script src="js/script.js"></script>	
 </body>
 </html>

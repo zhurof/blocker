@@ -19,6 +19,16 @@
 				background: #be0000
 				transform: none
 				box-shadow: none
+	.header
+		&__menu
+			>li
+				>a
+					transition: color .3s ease,border-color .3s ease
+				&:hover
+					>a
+						color: $yellow
+						font-weight: bold
+						border-color: $yellow
 @media(max-width:1199px)
 	.wrapper
 		max-width: 992px
@@ -30,4 +40,3 @@
 	
 
 //@media(max-width:480px)
-	
