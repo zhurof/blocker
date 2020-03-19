@@ -1,4 +1,4 @@
-﻿@media(min-width: 992px)
+﻿@media(min-width: 1100px)
 	.btn
 		transition: all .15s ease
 		&:hover
@@ -29,14 +29,211 @@
 						color: $yellow
 						font-weight: bold
 						border-color: $yellow
-@media(max-width:1199px)
-	.wrapper
-		max-width: 992px
+						
+@media(max-width:1919px)
+	.pic-block
+		&:before
+			background-size: 1920px auto
+			background-position: center bottom
+	.places
+		&:before
+			background-size: 1920px auto
+			background-position: center bottom
+	.comparsion
+		&:before
+			background-size: auto 100%
   
-//@media(max-width:991px)
+@media(max-width: 1099px)
+	.menu-btn
+		display: inline-block
+	.logo
+		&--big
+			font-size: 24px
+	.header
+		&__wrapper
+			max-width: 100%
+		&__menu
+			display: block
+			position: absolute
+			top: 100%
+			left: 0
+			width: 100%
+			background-color: #1a1a1a
+			color: #fff
+			text-align: right
+			transition: all .3s ease
+			transform:  perspective(100vh) rotate3d(1,0,0,-90deg)
+			transform-origin: center top
+			pointer-events: none
+			&--open
+				transform: perspective(100vh) rotate3d(1,0,0,0deg)
+				pointer-events: auto
+				box-shadow: 0 5px 10px rgba(255,255,255,.2)
+			>li
+				border-bottom: 1px solid rgba(255,255,255,.5)
+				padding: 0
+				>a
+					border: none
+					padding: 15px
+					-webkit-tap-highlight-color: transparentize($yellow,.7)
+		&__btn
+			margin-left: auto
+	.section-footer
+		&:before,
+		&:after
+			display: none
+	.promo
+		background-position: center -60px
+		background-size: auto 700px
+		padding: 40px 0 60px
+		&:last-child
+			background-position-y: 190px
+		&__text
+			position: static
+		&__form
+			margin: 360px auto 20px
+	.pic-block
+		&__wrapper
+			display: block
+		&__text
+			width: auto
+	.places
+		&__body
+			margin: 0 -15px
+			justify-content: center
+		&__item
+			width: 236px
+			margin: 0 15px 30px
+	.comparsion
+		&__body
+			margin: 0 -7.5px
+			overflow: hidden
+		&__item
+			margin: 0 7.5px 15px
+			width: calc(50% - 15px)
+		&__pic
+			height: auto
+			&:before
+				content: ''
+				display: block
+				padding-top: 100%
+		&__status
+			height: 30%
+			right: -25px
+			top: 30%
+
+@media(max-width:767px)
+	body
+		font-size: 16px
+	h2
+		font-size: 28px
+	.menu-btn
+		margin-left: auto
+	.logo
+		&--big
+			display: block
+			text-align: center
+			font-size: 18px
+		&--big &__img
+			margin: 0 auto 10px
+	.header
+		&__btn
+			display: none
+	.section-footer
+		display: none
+	.promo
+		padding-bottom: 40px
+		background-position-y: -85px
+		&:last-child
+			padding-top: 40px
+			background-position-y: -85px
+		&__text
+			padding: 0
+			border: none
+			text-align: center
+			font-size: 18px
+		&__title
+			font-size: 28px
+		&__list
+			display: block
+	.pic-block
+		padding: 40px 0
+		&:before
+			display: none
+		&__pic
+			width: 300px
+			max-width: 100%
+			margin-top: 20px
+	.places
+		padding: 40px 0
+		&:before
+			display: none
+		&__title
+			padding: 0
+			border: none
+			text-align: center
+		&__item
+			width: 200px
+			padding-top: 10px
+		&__pic
+			width: 180px
+			height: 180px
+	.comparsion
+		padding: 40px 0
+		background-color: #eaeaea
+		margin: 0
+		&:before
+			display: none
+		&__title
+			border: none
+			padding: 0
+			text-align: center
+			br
+				display: none
+		&__body
+			justify-content: center
+		&__item
+			width: 290px
+			flex: 1 1 auto			
+			&-head
+				font-size: 14px
+				br
+					display: none
+		&__pic
+			max-width: 280px
+			margin-left: auto
+			margin-right: auto
 	
 
-//@media(max-width:767px)
-	
-
-//@media(max-width:480px)
+@media(max-width:479px)
+	h2
+		font-size: 26px
+	body
+		padding-top: 56.7px
+	.logo
+		font-size: 8px
+		&--big
+			font-size: 12px
+		&__img
+			width: 30px
+	.promo
+		background: 
+			size: auto 420px
+			position-y: 50px
+		&:last-child
+			background-position-y: 50px
+		&__form
+			margin-top: 250px
+			padding-top: 90px
+		&__discount
+			font-size: 20px
+			right: -10px
+			&:after
+				border-width: 0 0 10px 10px
+		&__price
+			font-size: 28px
+			&--old
+				font-size: 18px
+	.footer
+		&__bottomline
+			font-size: 14px

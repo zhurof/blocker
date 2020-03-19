@@ -1,4 +1,9 @@
-﻿//таймер
+﻿//Шапка
+$('.menu-btn').click(function(){
+	$(this).toggleClass('menu-btn--active');
+	$('.header__menu').toggleClass('header__menu--open')
+})
+//таймер
 function leadingZero(number){
 	return +number < 10 ? '0'+number : number;
 }
@@ -52,12 +57,13 @@ $('a[href^="#"]').click(function(e){
 	var target = $(this.hash);
 	if(target.length && target.find('.wrapper').length){
 		e.preventDefault();
+		$('.header__menu').removeClass('header__menu--open');
+		$('.menu-btn').removeClass('menu-btn--active');
+		
 		$('html,body').animate({
 			scrollTop: target.find('.wrapper').offset().top - $('.header').innerHeight() - 25
 		},function(){
-			//intersectionObserver не всегда корректно определяет элемент после такой прокрутки, особенно если просматриваемых секций несколько на экране
-			//Поэтому перестраховываюсь
-			$('.header__menu a[href="#'+e.target.id+'"]').parent().addClass('active').siblings().removeClass('active');
+			$('.header__menu a[href="#'+e.target.id+'"]').parent().addClass('active').siblings().removeClass('active');			
 		})
 	}
 })
